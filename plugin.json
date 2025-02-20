@@ -1,16 +1,16 @@
 {
-  "name": "blinko-plugin-demo",
+  "name": "blinko-copy-private-link",
   "author": "blinko-offical",
   "url": "https://github.com/blinko-space/blinko-plugin-template",
-  "version": "0.0.4",
-  "minAppVersion": "0.0.0",
+  "version": "0.0.1",
+  "minAppVersion": "0.39.0",
   "displayName": {
-    "default": "Blinko plugin demo",
-    "zh": "Blinko插件示例"
+    "default": "Copy Private Link",
+    "zh": "右键复制私有链接"
   },
   "description": {
-    "default": "This is a blinko plugin demo, you can use it as a template to create your own plugin.",
-    "zh": "这是一个blinko插件示例，你可以使用它作为模板来创建自己的插件。"
+    "default": "add right click menu to copy private link",
+    "zh": "增加右键菜单，用于复制私有链接"
   },
   "readme": {
     "default": "README.md",
