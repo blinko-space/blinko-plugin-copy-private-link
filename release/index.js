@@ -2,7 +2,7 @@ System.register([], (n) => ({
   execute: () => {
     n("default", class {
       constructor() {
-        Object.assign(this, { name: "blinko-copy-private-link", author: "blinko-offical", url: "https://github.com/blinko-space/blinko-plugin-copy-private-link", version: "0.0.1", minAppVersion: "0.39.0", displayName: { default: "Copy Private Link", zh: "右键复制私有链接" }, description: { default: "add right click menu to copy private link", zh: "增加右键菜单，用于复制私有链接" }, readme: { default: "README.md" } });
+        Object.assign(this, { name: "blinko-copy-private-link", author: "blinko-offical", url: "https://github.com/blinko-space/blinko-plugin-copy-private-link", version: "0.0.2", minAppVersion: "0.39.0", displayName: { default: "Copy Private Link", zh: "右键复制私有链接" }, description: { default: "add right click menu to copy private link", zh: "增加右键菜单，用于复制私有链接" }, readme: { default: "README.md" } });
       }
       async init() {
         this.initI18n();
@@ -11,9 +11,13 @@ System.register([], (n) => ({
           name: "copy-private-link",
           label: i.t("copyPrivateLink"),
           icon: "material-symbols:link-rounded",
-          onClick: (o) => {
-            const e = `${window.location.origin}/detail?id=${o.id}`;
-            navigator.clipboard.writeText(e), window.Blinko.toast.success(i.t("copySuccess"));
+          onClick: (e) => {
+            const o = `${window.location.origin}/detail?id=${e.id}`;
+            try {
+              window.Blinko.copyToClipboard ? window.Blinko.copyToClipboard(o) : navigator.clipboard.writeText(o), window.Blinko.toast.success(i.t("copySuccess"));
+            } catch (t) {
+              console.error(t);
+            }
           }
         });
       }

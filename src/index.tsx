@@ -17,11 +17,19 @@ System.register([], (exports) => ({
         window.Blinko.addRightClickMenu({
           name: 'copy-private-link',
           label: i18n.t('copyPrivateLink'),
-          icon: 'material-symbols:link-rounded',  
+          icon: 'material-symbols:link-rounded',
           onClick: (item) => {
             const url = `${window.location.origin}/detail?id=${item.id}`
-            navigator.clipboard.writeText(url);
-            window.Blinko.toast.success(i18n.t('copySuccess'));
+            try {
+              if (window.Blinko.copyToClipboard) {
+                window.Blinko.copyToClipboard(url)
+              } else {
+                navigator.clipboard.writeText(url);
+              }
+              window.Blinko.toast.success(i18n.t('copySuccess'));
+            } catch (error) {
+              console.error(error)
+            }
           }
         });
       }
