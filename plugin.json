@@ -1,7 +1,7 @@
 {
   "name": "blinko-copy-private-link",
   "author": "blinko-offical",
-  "url": "https://github.com/blinko-space/blinko-plugin-template",
+  "url": "https://github.com/blinko-space/blinko-plugin-copy-private-link",
   "version": "0.0.1",
   "minAppVersion": "0.39.0",
   "displayName": {
@@ -13,7 +13,6 @@
     "zh": "增加右键菜单，用于复制私有链接"
   },
   "readme": {
-    "default": "README.md",
-    "zh": "README_zh.md"
+    "default": "README.md"
   }
 }
